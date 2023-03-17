@@ -14,7 +14,7 @@ This Fluentd Configuration file allows a local machine to send Syslog to a Remot
 # Operating System (tested)
 Debian
 
-## Fluentd Installation
+## Fluentd Installation (on the local machine)
     $ gem install fluentd
     $ fluentd -s conf
     $ fluentd -c conf/fluent.conf &
@@ -47,7 +47,7 @@ Debian
 
     $ vi /etc/fluent~/fluent.conf
 
-## 4. Set up MySQL server
+## 4. Set up MySQL server (on the remote machine)
 
 ### Install Docker
  
@@ -68,4 +68,4 @@ Debian
 		timestamp varchar(255),
 		PRIMARY KEY (id)
 		);
-Note: varchar limit needs to be figured out.
+Note: varchar limit needs to be figured out and set environment variables for password
