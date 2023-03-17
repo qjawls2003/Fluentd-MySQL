@@ -11,7 +11,7 @@ This Fluentd Configuration file allows a local machine to send Syslog to a Remot
 | >= 1.0.0          | >= v0.14.4 | >= 2.1 |
 | <  1.0.0          | <  v0.14.0 | >= 1.9 |
 
-#Operating System (tested)
+# Operating System (tested)
 Debian
 
 ## Fluentd Installation
@@ -22,23 +22,25 @@ Debian
     $ pkill -f fluentd
 
 ## Plugin Installation
-https://github.com/fluent/fluent-plugin-sql#readme
+[fluent-plugin-sql](https://github.com/fluent/fluent-plugin-sql#readme)
     $ fluent-gem install fluent-plugin-sql --no-document
     $ fluent-gem install pg --no-document # for postgresql
 
 ## Instruction
 # 1. Enable rsyslog
     $ vi /etc/rsyslog.conf
-# Send log messages to Fluentd (tcp)
-    $*.* @@127.0.0.1:5140 
+    
+    To send log messages to Fluentd (tcp) add this line `*.* @@127.0.0.1:5140` 
+# Restart    
     $ systemctl restart rsyslog
 
 # 2. Install mysql2 adapter
+
     $ sudo apt-get install default-libmysqlclient-dev
     $ sudo gem install mysql2  
-start mysql on the client side
+
+# start mysql on the client side (enable on startup)
     $ sudo systemctl start mysql
-auto start
     $ sudo systemctl enable mysql
 
 # 3. Edit Fluentd Config file
@@ -47,7 +49,8 @@ auto start
 
 # 4. Set up MySQL server
 
-Install Docker 
+# Install Docker
+ 
     $ docker pull mysql
     $ docker run --name project-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mypassword -d mysql
     $ mysql -u root -p
