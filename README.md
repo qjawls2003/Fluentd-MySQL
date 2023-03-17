@@ -26,36 +26,36 @@ Debian
     $ fluent-gem install fluent-plugin-sql --no-document
     $ fluent-gem install pg --no-document # for postgresql
 
-## Instruction
-# 1. Enable rsyslog
+# Instruction
+## 1. Enable rsyslog
     $ vi /etc/rsyslog.conf
     
     To send log messages to Fluentd (tcp) add this line `*.* @@127.0.0.1:5140` 
-# Restart    
+### Restart    
     $ systemctl restart rsyslog
 
-# 2. Install mysql2 adapter
+## 2. Install mysql2 adapter
 
     $ sudo apt-get install default-libmysqlclient-dev
     $ sudo gem install mysql2  
 
-# start mysql on the client side (enable on startup)
+### start mysql on the client side (enable on startup)
     $ sudo systemctl start mysql
     $ sudo systemctl enable mysql
 
-# 3. Edit Fluentd Config file
+## 3. Edit Fluentd Config file
 
     $ vi /etc/fluent~/fluent.conf
 
-# 4. Set up MySQL server
+## 4. Set up MySQL server
 
-# Install Docker
+### Install Docker
  
     $ docker pull mysql
     $ docker run --name project-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mypassword -d mysql
     $ mysql -u root -p
 
-# 5. Make Databse and Table
+## 5. Make Databse and Table
 
 	CREATE DATABSE logs;
 	USE logs
