@@ -15,14 +15,19 @@ This Fluentd Configuration file allows a local machine to send Syslog to a Remot
 Debian
 
 ## Fluentd Installation (on the local machine)
+See more info from [fluentd](https://github.com/fluent/fluentd)
+
     $ gem install fluentd
     $ fluentd -s conf
     $ fluentd -c conf/fluent.conf &
     $ echo '{"json":"message"}' | fluent-cat debug.test
     $ pkill -f fluentd
 
+Documentation [Fluentd Doc](https://docs.fluentd.org)
+
 ## Plugin Installation
-[fluent-plugin-sql](https://github.com/fluent/fluent-plugin-sql#readme)
+See more info from [fluent-plugin-sql](https://github.com/fluent/fluent-plugin-sql#readme)
+
     $ fluent-gem install fluent-plugin-sql --no-document
     $ fluent-gem install pg --no-document # for postgresql
 
