@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Fluentd Configuration file allows a local machine to send Syslog to a Remote MYSQL Server
+This Fluentd Configuration file allows a local machine to send syslog to a remote MYSQL Server
 
 ## Requirements
 
