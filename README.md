@@ -69,3 +69,9 @@ Debian
 		PRIMARY KEY (id)
 		);
 Note: varchar limit needs to be figured out and set environment variables for password
+
+# Example
+
+![alt text](https://github.com/qjawls2003/Fluentd-MySQL/blob/main/images/table1.PNG)
+
+![alt text](https://github.com/qjawls2003/Fluentd-MySQL/blob/main/images/workbench1.PNG)
